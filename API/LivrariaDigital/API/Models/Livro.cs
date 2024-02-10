@@ -1,14 +1,10 @@
-﻿using System.Runtime.InteropServices;
-using System.Text.Json.Serialization;
-
-namespace API.Models
+﻿namespace API.Models
 {
     public class Livro
     {
-        [JsonIgnore]
-        public int Id { get; set; }
-        public required string Titulo { get; set; }
-        public required string Autor { get; set; }
-        public int AnoPublicacao { get; set; }
+        public int Id { get; set; } // ID único para cada livro
+        public required string Titulo { get; set; } // Título do livro
+        public required string Autor { get; set; } // Autor do livro
+        public int AnoPublicacao { get; set; }  // Ano em que o livro foi publicado
     }
 }

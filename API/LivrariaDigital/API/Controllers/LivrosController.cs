@@ -1,17 +1,15 @@
 ﻿using API.Interfaces;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] // Rota da API 
     [ApiController]
     public class LivrosController : ControllerBase
     {
         private readonly ILivroRepository _livroRepository;
-        private readonly ILogger<LivrosController> _logger; 
+        private readonly ILogger<LivrosController> _logger;
 
         public LivrosController(ILivroRepository livroRepository, ILogger<LivrosController> logger)
         {
@@ -19,7 +17,7 @@ namespace API.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet] // GET: api/Livros => Retorna todos os livros
         public ActionResult<IEnumerable<Livro>> Get()
         {
             var livros = _livroRepository.GetAll();
@@ -31,7 +29,7 @@ namespace API.Controllers
             return Ok(livros);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] // GET: api/Livros/{id} => Retorna dados de um livro pelo ID
         public ActionResult<Livro> Get(int id)
         {
             var livro = _livroRepository.GetById(id);
@@ -44,7 +42,7 @@ namespace API.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost] // POST: api/Livros => Adiciona um novo livro
         public ActionResult<Livro> Post([FromBody] Livro livro)
         {
             if (string.IsNullOrEmpty(livro.Titulo) || string.IsNullOrEmpty(livro.Autor) || livro.AnoPublicacao < 1)
@@ -58,18 +56,20 @@ namespace API.Controllers
             return CreatedAtAction(nameof(Get), new { id = livro.Id }, livro);
         }
 
-        [HttpPut("{id}")]
+
+        [HttpPut("{id}")] // PUT: api/Livros/{id} => Atualiza um livro existente pelo ID
         public IActionResult Put(int id, [FromBody] Livro updatedLivro)
         {
             if (updatedLivro == null)
             {
-                return BadRequest("Dados do livro inválidos.");
+                return BadRequest(new { message = "Dados do livro inválidos." });
             }
 
             var livro = _livroRepository.GetById(id);
             if (livro == null)
             {
-                return NotFound($"Livro com ID {id} não encontrado.");
+                _logger.LogInformation($"Livro com ID {id} não encontrado.");
+                return NotFound(new { message = $"Livro com ID {id} não encontrado." });
             }
 
             livro.Titulo = updatedLivro.Titulo;
@@ -78,23 +78,23 @@ namespace API.Controllers
 
             _livroRepository.Update(livro);
 
-            return Ok($"Livro com o ID '{id}' foi atualizado ");
+            return Ok(new { message = $"Livro com o ID '{id}' foi atualizado." });
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")] // DELETE: api/Livros/{id} => Exclui um livro pelo ID
         public IActionResult Delete(int id)
         {
             var existingLivro = _livroRepository.GetById(id);
             if (existingLivro == null)
             {
                 _logger.LogInformation($"Livro com ID {id} não encontrado.");
-                return NotFound($"Livro com ID {id} não encontrado.");
+                return NotFound(new { message = $"Livro com ID {id} não encontrado." });
             }
 
             _livroRepository.Delete(id);
 
-            return Ok($"Livro com o título '{existingLivro.Titulo}' e ID '{id}' foi excluído com sucesso.");
+            return Ok(new { message = $"Livro com o título '{existingLivro.Titulo}' e ID '{id}' foi excluído com sucesso." });
         }
 
     }
