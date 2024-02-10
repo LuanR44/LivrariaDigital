@@ -1,0 +1,130 @@
+/* Reset CSS para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Faz com que o gradiente de fundo fique fixo ao rolar a página */
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Cabeçalho com sombra, transparência e layout flexível */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Separa o logo e a navegação */
+    padding: 0 20px;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #007bff;
+}
+
+/* Navegação estilizada com links à direita */
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* Estilo principal */
+main {
+    margin: auto;
+    max-width: 1200px;
+    padding-top: 110px; /* Altura inicial para telas maiores, ajuste conforme necessário */
+    transition: padding-top 0.3s; /* Transição suave ao alterar o tamanho */
+}
+
+
+/* Estilos para visualização de livros */
+.livro {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff; /* Adiciona um fundo branco para os livros */
+    border-radius: 5px; /* Cantos arredondados para um visual moderno */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para profundidade */
+}
+
+.livro h3 {
+    margin: 0 0 10px 0;
+}
+
+.livro p {
+    margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 10px; /* Adicione um pouco de padding se necessário */
+    }
+
+    header h1, nav {
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center; /* Centraliza o texto dos títulos */
+        margin-bottom: 20px; /* Espaço abaixo do título, ajuste conforme necessário */
+    }
+
+    nav {
+        justify-content: center;
+        margin-top: 5px; /* Espaçamento entre o título e os itens de navegação */
+    }
+
+    nav a {
+        display: block; /* Os itens do menu são empilhados verticalmente */
+        margin: 10px 0; /* Espaçamento entre os itens do menu */
+    }
+
+    main {
+        padding-top: 180px; /* Aumente o padding-top conforme necessário */
+    }
+
+    .livro {
+        margin-bottom: 20px; /* Aumenta o espaçamento entre os livros para melhorar a legibilidade */
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção de Livros</title>
+    <link rel="stylesheet" href="css/stylemanut.css">
+</head>
+<body>
+    <header>
+        <a href="manutencao.html">
+            <h1>Manutenção de Livros</h1>
+        </a>
+
+        <nav>
+            <a href="index.html">Visualizar Acervo</a>
+        </nav>
+    </header>
+    <main>
+        <section id="adicionar-livro">
+            <h2>Adicionar Novo Livro</h2>
+            <form id="form-adicionar">
+                <input type="text" id="adicionarNomeLivro" name="nomeLivro" placeholder="Nome do Livro" required>
+                <input type="text" id="adicionarNomeAutor" name="nomeAutor" placeholder="Nome do Autor" required>
+                <input type="date" id="adicionarDataPublicacao" name="dataPublicacao" required>
+                <button type="submit">Adicionar Livro</button>
+            </form>
+        </section>
+        <section id="editar-livro">
+            <h2>Editar Livro</h2>
+            <form id="form-editar">
+                <input type="number" id="editarId" name="id" placeholder="ID do Livro" required>
+                <input type="text" id="editarNomeLivro" name="nomeLivro" placeholder="Nome do Livro">
+                <input type="text" id="editarNomeAutor" name="nomeAutor" placeholder="Nome do Autor">
+                <input type="date" id="editarDataPublicacao" name="dataPublicacao">
+                <button type="submit">Editar Livro</button>
+            </form>
+        </section>
+        <section id="deletar-livro">
+            <h2>Deletar Livro</h2>
+            <form id="form-deletar">
+                <input type="number" id="deletarId" name="id" placeholder="ID do Livro" required>
+                <button type="submit">Deletar Livro</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
