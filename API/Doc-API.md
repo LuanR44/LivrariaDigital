@@ -19,7 +19,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 - **GET** `/api/livros`
   - Retorna uma lista de todos os livros disponíveis na livraria.
     
-#### Resposta
+#### Resposta:
 
 ```json
   {
@@ -42,7 +42,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   - Adiciona um novo livro à livraria.
 
 
-#### Corpo da Requisição
+#### Corpo da Requisição:
 
 ```json
   {
@@ -52,7 +52,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   }
 ```
 
-#### Resposta
+#### Resposta:
 
 ```json
 {
@@ -68,7 +68,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 - **PUT** `/api/livros`
   - Atualiza os detalhes de um livro existente.
 
-#### Parâmetros
+#### Parâmetros:
 
 `id`: ID do Livro;
 
@@ -78,7 +78,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 
 `anoPublicacao`: Data de Publicação do Livro;
 
-#### Corpo da Requisição
+#### Corpo da Requisição:
 ```json
 {
   "id": 3,
@@ -88,7 +88,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 }
 ```
 
-#### Resposta
+#### Resposta:
 
 ```json
 {
@@ -104,11 +104,11 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 - **DELETE** `/api/livros`
   - Remove um livro da livraria.
 
-#### Parâmetros
+#### Parâmetros:
 
 `ID`: ID do livro a ser deletado.
 
-#### Resposta
+#### Resposta:
 
 ```json
 {
