@@ -57,7 +57,7 @@ A interface gráfica, construída com tecnologias web como HTML, CSS e JavaScrip
 
 ## 📖 Documentação API
 
-1. Acesse o arquivo <a href="https://github.com/LuanR44/LivrariaDigital/tree/main/API" target="_blank">API-Documentation</a>
+1. Acesse o arquivo <a href="https://github.com/LuanR44/LivrariaDigital/blob/main/API/Doc-API.md" target="_blank">Doc-API</a>
 
 
 ## ⚙️ Instalação:
