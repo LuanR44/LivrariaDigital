@@ -28,7 +28,6 @@ Para começar a usar esta API, você precisará fazer o seguinte:
     "autor": "Nome do Autor",
     "anoPublicacao": "DD-MM-YYYY"
   },
-
   {
     "id": 2,
     "titulo": "Outro Livro",
