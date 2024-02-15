@@ -26,13 +26,13 @@ Para começar a usar esta API, você precisará fazer o seguinte:
     "id": 1,
     "titulo": "Título do Livro",
     "autor": "Nome do Autor",
-    "anoPublicacao": "DD-MM-YYYY"
+    "dataPublicacao": "DD-MM-YYYY"
   },
   {
     "id": 2,
     "titulo": "Outro Livro",
     "autor": "Outro Autor",
-    "anoPublicacao": "DD-MM-YYYY"
+    "dataPublicacao": "DD-MM-YYYY"
   }
 ```
 
@@ -48,7 +48,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   {
     "titulo": "Título do Livro",
     "autor": "Nome do Autor",
-    "anoPublicacao": "DD-MM-YYYY"
+    "dataPublicacao": "DD-MM-YYYY"
   }
 ```
 
@@ -59,7 +59,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   "id": 3,
   "titulo": "Título do Livro",
   "autor": "Nome do Autor",
-  "anoPublicacao": "DD-MM-YYYY"
+  "dataPublicacao": "DD-MM-YYYY"
 }
 ```
 
@@ -76,7 +76,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
 
 `autor`: Autor do Livro;
 
-`anoPublicacao`: Data de Publicação do Livro;
+`dataPublicacao`: Data de Publicação do Livro;
 
 #### Corpo da Requisição:
 ```json
@@ -84,7 +84,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   "id": 3,
   "titulo": "Novo Título",
   "autor": "Novo Nome do Autor",
-  "anoPublicacao": "DD-MM-YYYY"
+  "dataPublicacao": "DD-MM-YYYY"
 }
 ```
 
@@ -95,7 +95,7 @@ Para começar a usar esta API, você precisará fazer o seguinte:
   "id": 3,
   "nome": "Título do Livro Atualizado",
   "autor": "Autor do Livro Atualizado",
-  "anoPublicacao": "DD-MM-YYYY"
+  "dataPublicacao": "DD-MM-YYYY"
 }
 ```
 
