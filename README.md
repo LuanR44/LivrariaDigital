@@ -51,6 +51,12 @@ A interface gráfica, construída com tecnologias web como HTML, CSS e JavaScrip
         <a href="https://www.postman.com/" target="_blank">Download</a>
       </td>
     </tr>
+     <tr>
+      <td style="font-weight: bold">Cypress</td>
+      <td>
+        <a href="https://www.cypress.io/" target="_blank">Download</a>
+      </td>
+    </tr>
   </tbody>
 </table>
 
