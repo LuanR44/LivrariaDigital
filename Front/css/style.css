@@ -1,4 +1,3 @@
-/* Reset CSS para garantir consistência entre navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -15,13 +14,12 @@ body {
     min-height: 100%;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Faz com que o gradiente de fundo fique fixo ao rolar a página */
+    background-attachment: fixed;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* Cabeçalho com sombra, transparência e layout flexível */
 header {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -29,7 +27,7 @@ header {
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Separa o logo e a navegação */
+    justify-content: space-between; 
     padding: 0 20px;
     align-items: center;
 }
@@ -40,7 +38,6 @@ header h1 {
     color: #007bff;
 }
 
-/* Navegação estilizada com links à direita */
 nav {
     display: flex;
     justify-content: flex-end;
@@ -70,19 +67,17 @@ h2 {
 main {
     margin: auto;
     max-width: 1200px;
-    padding-top: 110px; /* Altura inicial para telas maiores, ajuste conforme necessário */
-    transition: padding-top 0.3s; /* Transição suave ao alterar o tamanho */
+    padding-top: 110px;
+    transition: padding-top 0.3s;
 }
 
-
-/* Estilos para visualização de livros */
 .livro {
     border: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #fff; /* Adiciona um fundo branco para os livros */
-    border-radius: 5px; /* Cantos arredondados para um visual moderno */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para profundidade */
+    background-color: #fff;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
 .livro h3 {
@@ -93,12 +88,11 @@ main {
     margin: 5px 0;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         text-align: center;
-        padding-bottom: 10px; /* Adicione um pouco de padding se necessário */
+        padding-bottom: 10px;
     }
 
     header h1, nav {
@@ -106,25 +100,25 @@ main {
     }
 
     h2 {
-        text-align: center; /* Centraliza o texto dos títulos */
-        margin-bottom: 20px; /* Espaço abaixo do título, ajuste conforme necessário */
+        text-align: center; 
+        margin-bottom: 20px;
     }
 
     nav {
         justify-content: center;
-        margin-top: 5px; /* Espaçamento entre o título e os itens de navegação */
+        margin-top: 5px; 
     }
 
     nav a {
-        display: block; /* Os itens do menu são empilhados verticalmente */
-        margin: 10px 0; /* Espaçamento entre os itens do menu */
+        display: block;
+        margin: 10px 0;
     }
 
     main {
-        padding-top: 180px; /* Aumente o padding-top conforme necessário */
+        padding-top: 180px;
     }
 
     .livro {
-        margin-bottom: 20px; /* Aumenta o espaçamento entre os livros para melhorar a legibilidade */
+        margin-bottom: 20px;
     }
 }

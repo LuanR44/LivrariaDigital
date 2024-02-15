@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const autor = document.createElement('p');
                 autor.textContent = `Autor: ${livro.autor}`;
     
-                const anoPublicacao = document.createElement('p');
-                anoPublicacao.textContent = `Ano de Publicação: ${livro.anoPublicacao}`;
+                const dataPublicacao = document.createElement('p');
+                dataPublicacao.textContent = `Ano de Publicação: ${livro.dataPublicacao}`;
     
                 livroElement.appendChild(id);
                 livroElement.appendChild(titulo);
                 livroElement.appendChild(autor);
-                livroElement.appendChild(anoPublicacao);
+                livroElement.appendChild(dataPublicacao);
     
                 listaLivros.appendChild(livroElement);
             });
@@ -45,22 +45,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    
+
+    // Problema com o input type Data deixando colocar mais de 4 digitos no ano
+    const inputAdicionarDataPublicacao = document.getElementById('adicionarDataPublicacao');
+    inputAdicionarDataPublicacao.addEventListener('input', limitYearInput);
+
+    const inputEditarDataPublicacao = document.getElementById('editarDataPublicacao');
+    inputEditarDataPublicacao.addEventListener('input', limitYearInput);
+
+    function limitYearInput(e) {
+        let value = e.target.value;
+        let parts = value.split('-');
+        if (parts[0].length > 4) {
+            parts[0] = parts[0].substring(0, 4);
+            value = parts.join("-");
+            e.target.value = value;
+        }
+    }
 
 
     formAdicionar.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const anoPublicacao = document.getElementById('adicionarDataPublicacao').value.split('-')[0]; // Para nao poder enviar uma data com mais de 4 digitos
         const data = {
             titulo: document.getElementById('adicionarNomeLivro').value,
             autor: document.getElementById('adicionarNomeAutor').value,
-            anoPublicacao: document.getElementById('adicionarDataPublicacao').value.split('-')[0]
+            dataPublicacao: document.getElementById('adicionarDataPublicacao').value.split('-')[0]
         };
-
-        if(anoPublicacao.length !== 4){ 
-            alert('Por favor, insira um ano de publicação válido.');
-            return;
-        }
         
         try {
             await criarLivro(data);
@@ -76,18 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     formEditar.addEventListener('submit', async function(e) {
         e.preventDefault();
         const id = document.getElementById('editarId').value;
-        const anoPublicacao = document.getElementById('editarDataPublicacao').value.split('-')[0];
         const data = {
             titulo: document.getElementById('editarNomeLivro').value,
             autor: document.getElementById('editarNomeAutor').value,
-            anoPublicacao: parseInt(document.getElementById('editarDataPublicacao').value, 10)
+            dataPublicacao: parseInt(document.getElementById('editarDataPublicacao').value, 10)
         };
-
-        if(anoPublicacao.length !== 4){
-            alert('Por favor, insira um ano de publicação válido.');
-            return;
-        }
-    
+        
         try {
             await atualizarLivro(id, data);
             alert('Livro atualizado com sucesso!');
@@ -115,12 +119,3 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
 });
-
-function toggleMenu() {
-    var navbar = document.getElementById("navbar");
-    if (navbar.classList.contains("active")) {
-        navbar.classList.remove("active");
-    } else {
-        navbar.classList.add("active");
-    }
-}

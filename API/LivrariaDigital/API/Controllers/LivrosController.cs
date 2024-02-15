@@ -45,7 +45,7 @@ namespace API.Controllers
         [HttpPost] // POST: api/Livros => Adiciona um novo livro
         public ActionResult<Livro> Post([FromBody] Livro livro)
         {
-            if (string.IsNullOrEmpty(livro.Titulo) || string.IsNullOrEmpty(livro.Autor) || livro.AnoPublicacao < 1)
+            if (string.IsNullOrEmpty(livro.Titulo) || string.IsNullOrEmpty(livro.Autor) || livro.DataPublicacao < 1)
             {
                 _logger.LogWarning("Tentativa de adicionar livro com dados inválidos.");
                 return BadRequest("Dados do livro são inválidos.");
@@ -74,7 +74,7 @@ namespace API.Controllers
 
             livro.Titulo = updatedLivro.Titulo;
             livro.Autor = updatedLivro.Autor;
-            livro.AnoPublicacao = updatedLivro.AnoPublicacao;
+            livro.DataPublicacao = updatedLivro.DataPublicacao;
 
             _livroRepository.Update(livro);
 

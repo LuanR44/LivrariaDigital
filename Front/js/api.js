@@ -1,4 +1,4 @@
-const apiUrl = 'https://localhost:7197/api/Livros/'; // NÃO ESQUEÇA DE COLOCAR A URL CORRETA AQUI, POIS PODE MUDAR!
+const apiUrl = 'https://localhost:7197/api/Livros/';
 
 async function fetchApi(url, method, body = null) {
     const headers = {
