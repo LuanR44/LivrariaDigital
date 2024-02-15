@@ -2,12 +2,12 @@ describe('Acervo de Livros', () => {
   const primeiroLivro = {
     nome: 'O Senhor dos Anéis',
     autor: 'J.R.R. Tolkien',
-    dataPublicacao: '1954-07-29'
+    dataPublicacao: '1954-07-29' // A data vai em formato americano, então acaba só ficando o ano nos testes
   };
   const livroEditado = {
     nome: 'O Hobbit',
     autor: 'J.R.R. Tolkien',
-    dataPublicacao: '1937-09-21'
+    dataPublicacao: '1937-09-21' // A data vai em formato americano, então acaba só ficando o ano nos testes
   };
 
   const livros = [
@@ -19,7 +19,7 @@ describe('Acervo de Livros', () => {
   const livroDelete = {
     nome: 'Duna', 
     autor: 'Frank Herbert', 
-    dataPublicacao: '1965-08-01' 
+    dataPublicacao: '1965-08-01' // A data vai em formato americano, então acaba só ficando o ano nos testes
   };
 
 
