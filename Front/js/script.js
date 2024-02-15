@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 autor.textContent = `Autor: ${livro.autor}`;
     
                 const dataPublicacao = document.createElement('p');
-                dataPublicacao.textContent = `Ano de Publicação: ${livro.dataPublicacao}`;
+                dataPublicacao.textContent = `Data de Publicação: ${livro.dataPublicacao}`;
     
                 livroElement.appendChild(id);
                 livroElement.appendChild(titulo);
